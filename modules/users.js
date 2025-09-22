@@ -4,11 +4,11 @@ const router = express.Router()
 const { users, IsEmailExists, getNextID, saveUsers } = require('../utils/store');
 
 // GET Összes user 
-router.get('/', (_req, res) => {
+    router.get('/', (_req, res) => {
     res.send(users);
 });
 
-// GET user id alapján
+// GET user id alapján  
 
 router.get('/:id', (req,res) => {
     let id = req.params.id;
@@ -105,7 +105,7 @@ router.patch('/:id', (req, res) => {
     return res.status(400).send({msg:'Nincs ilyen azonosítójú felhasználó!'});
 });
 
-// DELETE user id alapján
+// DELETE user by id
 router.delete('/:id', (req, res) => {
     let id = req.params.id;
     let idx = users.findIndex(user => user.id == id);
