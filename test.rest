@@ -1,0 +1,9 @@
+### GET route
+
+GET http://localhost:3000
+Content-Type: application/json
+
+### GET all users
+
+GET http://localhost:3000/users
+Content-Type: application/json
