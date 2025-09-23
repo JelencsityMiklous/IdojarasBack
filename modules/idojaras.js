@@ -41,7 +41,8 @@ router.post('/', (req, res) => {
     data.id = getNextID(idojaras);
     idojaras.push(data);
     saveIdojaras(idojaras);
-    res.send({msg: 'Az időjárás adat felvéve!'});
+    res.status(200).send({msg: 'Az időjárás adat felvéve!'});
+    
 });
 
 // PATCH időjárás id alapján
@@ -91,7 +92,7 @@ router.delete('/users/:uid', (req, res)=>{
  });
 
  // DELETE összes felhasználó időjárásának tőrlése
-router.delete('/', (req, res)=>{
+router.delete('/', (_req, res)=>{
     idojaras = [];
     saveIdojaras(idojaras);
     res.send({msg: 'Az összes időjárás adat sikeresen törölve!'});
