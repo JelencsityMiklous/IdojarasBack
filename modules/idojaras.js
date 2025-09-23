@@ -3,8 +3,13 @@ const router = express.Router()
 
 const { users, idojaras, getNextID, saveIdojaras } = require('../utils/store');
 
+// GET Összes időjárás 
+    router.get('/', (_req, res) => {
+    res.send(idojaras);
+});
+
 // GET Összes időjárás id alapján
-router.get('/user/:uid', (req, res)=> {
+router.get('/users/:uid', (req, res)=> {
     let userId = req.params.uid;
     let idx = users.findIndex(user => user.id == userId);
 
@@ -71,7 +76,7 @@ router.delete('/:id', (req, res)=>{
  });
 
  // DELETE összes időjárás id alapján
-router.delete('/user/:uid', (req, res)=>{
+router.delete('/users/:uid', (req, res)=>{
     let userId = req.params.uid;
     let idx = users.findIndex(user => user.id == userId);
 

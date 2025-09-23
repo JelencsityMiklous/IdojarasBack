@@ -55,7 +55,7 @@ Content-Type: application/json
 
 ### GET összes időjárás adat id alapján
 
-GET http://localhost:3000/idojaras/user/1
+GET http://localhost:3000/idojaras/users/1
 Content-Type: application/json
 
 ### GET egy időjárás id alapján
@@ -69,7 +69,7 @@ POST http://localhost:3000/idojaras/
 Content-Type: application/json
 
 {
-    "userId": 4,
+    "userId": 3,
     "date": "2025-09-12",
     "idojarasAdat": "23"
 }
@@ -92,7 +92,7 @@ Content-Type: application/json
 
 ### DELETE felhasználó összes időjárás adata id alapján
 
-DELETE http://localhost:3000/idojaras/user/2
+DELETE http://localhost:3000/idojaras/users/2
 Content-Type: application/json
 
 ### DELETE összes időjárás adat törlése az összes felhasználónál
